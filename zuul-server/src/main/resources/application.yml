@@ -1,0 +1,31 @@
+server:
+  port: 8666
+eureka:
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    service-url:
+      defaultZone: http://127.0.0.1:8888
+  instance:
+    ip-address: true
+
+zuul:
+  prefix: /zzq
+  ignoredServices: '*'
+  routes:
+    users:
+      path: /user/**
+#      serviceId: users
+      url: https://www.baidu.com/
+    users2:
+          path: /www/**
+    #      serviceId: users
+          url: https://www.baidu.com/
+
+ribbon:
+  eureka:
+    enabled: false
+
+cloud-client:
+  ribbon:
+    listOfServers: 127.0.0.1:8800
