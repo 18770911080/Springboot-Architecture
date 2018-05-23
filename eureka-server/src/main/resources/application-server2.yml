@@ -5,4 +5,4 @@ eureka:
     hostname: server2
   client:
     service-url:
-      default-zone: http://server1:8761/eureka/,http://server3:8763/eureka/
+      defaultZone: http://server1:8764/eureka/,http://server3:8763/eureka/
