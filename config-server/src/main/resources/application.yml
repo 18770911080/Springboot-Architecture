@@ -8,7 +8,7 @@ spring:
     config:
       server:
         git:
-          uri:
+          uri: https://github.com/18770911080/Springboot-Architecture
           search-paths: /**
       label: master
       username: zzq

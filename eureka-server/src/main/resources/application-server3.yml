@@ -1,0 +1,8 @@
+server:
+  port: 8763
+eureka:
+  instance:
+    hostname: server3
+  client:
+    service-url:
+      default-zone: http://server1:8761/eureka/,http://server2:8762/eureka/
