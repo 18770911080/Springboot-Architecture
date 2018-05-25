@@ -1,28 +1,33 @@
-package zzq.eureka;
+package zzq.feign;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
-import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import zzq.feign.service.HelloService;
 
-@EnableEurekaServer
 @SpringBootApplication
+@EnableEurekaClient
+@EnableFeignClients
 @RestController
-public class EurekaApplication{
+public class FeignApplication {
+
+	@Autowired
+	private HelloService hs;
 
 	@Value("${server.port}")
 	private int port;
 
 	@RequestMapping("hello")
 	public String hello(){
-		return "eureka-server:"+port;
+		return hs.hello()+"/nWeb:"+port;
 	}
 
 	public static void main(String[] args) {
-		SpringApplication.run(EurekaApplication.class, args);
+		SpringApplication.run(FeignApplication.class, args);
 	}
-
 }

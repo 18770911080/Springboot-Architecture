@@ -1,0 +1,11 @@
+server:
+  port: 8801
+spring:
+ application:
+  name: fegin
+eureka:
+ client:
+  service-url:
+   defaultZone: http://server1:8764/eureka/,http://server2:8762/eureka/,http://server3:8763/eureka/
+
+
