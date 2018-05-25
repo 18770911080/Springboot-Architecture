@@ -2,7 +2,7 @@ server:
   port: 8777
 eureka:
   client:
-    service-url: http://127.0.0.1:8888
+    zzq.ribbon.service-url: http://127.0.0.1:8888
 spring:
   cloud:
     config:
