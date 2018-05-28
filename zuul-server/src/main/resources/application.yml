@@ -1,31 +1,15 @@
 server:
   port: 8666
+spring:
+  application:
+    name: zuul
 eureka:
-  client:
-    registerWithEureka: false
-    fetchRegistry: false
-    service-url:
-      defaultZone: http://127.0.0.1:8888
-  instance:
-    ip-address: true
-
+ client:
+  service-url:
+   defaultZone: http://server1:8764/eureka/,http://server2:8762/eureka/,http://server3:8763/eureka/
 zuul:
-  prefix: /zzq
-  ignoredServices: '*'
-  routes:
-    users:
-      path: /user/**
-#      serviceId: users
-      url: https://www.baidu.com/
-    users2:
-          path: /www/**
-    #      serviceId: users
-          url: https://www.baidu.com/
+ routes:
+  web-service:
+   path: /**
+   serviceId: fegin
 
-ribbon:
-  eureka:
-    enabled: false
-
-cloud-client:
-  ribbon:
-    listOfServers: 127.0.0.1:8800
