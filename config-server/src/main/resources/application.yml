@@ -1,16 +1,14 @@
 server:
   port: 8777
 eureka:
-  client:
-    zzq.ribbon.service-url: http://127.0.0.1:8888
+ client:
+  service-url:
+   defaultZone: http://server1:8764/eureka/,http://server2:8762/eureka/,http://server3:8763/eureka/
 spring:
   cloud:
     config:
       server:
         git:
-          uri: https://github.com/18770911080/Springboot-Architecture
-          search-paths: /**
+          uri: https://github.com/18770911080/config
       label: master
-      username: zzq
-      password: zzq144091
 
