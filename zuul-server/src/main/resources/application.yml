@@ -11,5 +11,5 @@ zuul:
  routes:
   web-service:
    path: /**
-   serviceId: fegin
+   serviceId: feign
 
