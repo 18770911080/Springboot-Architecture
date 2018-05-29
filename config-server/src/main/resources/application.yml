@@ -11,4 +11,6 @@ spring:
         git:
           uri: https://github.com/18770911080/config
       label: master
+  application:
+    name: config
 
