@@ -2,7 +2,7 @@ server:
   port: 8801
 spring:
  application:
-  name: fegin
+  name: feign
 eureka:
  client:
   service-url:
